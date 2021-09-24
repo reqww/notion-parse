@@ -26,7 +26,6 @@ class File(object):
         if not os.path.exists(self.save_dir):
             os.mkdir(self.save_dir)
         pdfkit.from_file(self.__filepath, "media/out.pdf")
-        # return str()
 
 
 class TemplateChooser:
@@ -111,7 +110,6 @@ class Downloader(object):
         name = self.__get_tmp_file_name()
         with open(self.__get_file_path(name), "wb") as tmp:
             while line := response.readline():
-                print(line)
                 tmp.write(line)
 
         return self.__get_relative_path(name)
