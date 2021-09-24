@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "notion-parse"
+version = "0.1.0"
+description = "Парсит страничку ноушна и вставляет в пдф вместе с именем, группой и предметом в качестве титульника"
+authors = ["Michael Gurbanov <MYGurbanov@sberbank.ru>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+urllib3 = "^1.26.7"
+emoji = "^1.5.0"
+subject = "^0.1.0"
+python-pdf = "^0.38"
+pdfkit = "^0.6.1"
+wkhtmltopdf = "^0.2"
+markdown2 = "^2.4.1"
+requests = "^2.26.0"
+
+[tool.poetry.dev-dependencies]
+black = "^21.9b0"
+pre-commit = "^2.15.0"
+ipython = "^7.27.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+download = "notion_parse.main:main"
