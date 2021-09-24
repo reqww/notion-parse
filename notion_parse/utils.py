@@ -99,9 +99,6 @@ class Downloader(object):
     def __get_file_path(self, name) -> str:
         return self.tmp_path + name
 
-    def __get_relative_path(self, name) -> str:
-        return self.tmp_path + name
-
     @staticmethod
     def __get_tmp_file_name() -> str:
         return str(uuid.uuid4()) + ".html"
@@ -112,7 +109,7 @@ class Downloader(object):
             while line := response.readline():
                 tmp.write(line)
 
-        return self.__get_relative_path(name)
+        return self.__get_file_path(name)
 
     def __make_tmp(self, response) -> str:
         if not os.path.exists(self.tmp_dir):
