@@ -4,6 +4,7 @@
 # Как запустить?
 ```
 pip install poetry
+poetry shell
 poetry install
 poetry run download
 ```
