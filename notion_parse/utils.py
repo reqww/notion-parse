@@ -134,5 +134,4 @@ class Downloader(object):
         else:
             return file.get_pdf()
         finally:
-            # os.remove(self.filename)
-            pass
+            os.remove(self.filename)
